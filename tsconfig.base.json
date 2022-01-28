@@ -15,7 +15,10 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@nxdemo/store/ui-shared": ["libs/store/ui-shared/src/index.ts"]
+      "@nxdemo/store/ui-shared": ["libs/store/ui-shared/src/index.ts"],
+      "@nxdemo/store/util-formatters": [
+        "libs/store/util-formatters/src/index.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]
