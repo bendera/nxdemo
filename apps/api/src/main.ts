@@ -4,11 +4,18 @@
  */
 
 import * as express from 'express';
+import { getAllGames, getGame } from './app/games.repository';
 
 const app = express();
 
-app.get('/api', (req, res) => {
-  res.send({ message: 'Welcome to api!' });
+app.get('/api', (req, res) => res.send({ message: 'Welcome to api!' }));
+
+app.get('/api/games', (req, res) => {
+  res.send(getAllGames());
+});
+
+app.get('/api/games/:id', (req, res) => {
+  return res.send(getGame(req.params.id));
 });
 
 const port = process.env.port || 3333;
