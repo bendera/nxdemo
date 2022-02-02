@@ -1,17 +1,11 @@
 {
+  "extends": "@nrwl/workspace/presets/core.json",
   "npmScope": "nxdemo",
   "affected": {
     "defaultBase": "master"
   },
   "cli": {
     "defaultCollection": "@nrwl/workspace"
-  },
-  "implicitDependencies": {
-    "package.json": {
-      "dependencies": "*",
-      "devDependencies": "*"
-    },
-    ".eslintrc.json": "*"
   },
   "tasksRunnerOptions": {
     "default": {
@@ -25,13 +19,5 @@
         ]
       }
     }
-  },
-  "targetDependencies": {
-    "build": [
-      {
-        "target": "build",
-        "projects": "dependencies"
-      }
-    ]
   }
 }
