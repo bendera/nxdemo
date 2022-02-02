@@ -1,4 +1,7 @@
 {
   "version": 2,
-  "projects": {}
+  "projects": {
+    "exampleapp": "apps/exampleapp",
+    "exampleapp-e2e": "apps/exampleapp-e2e"
+  }
 }

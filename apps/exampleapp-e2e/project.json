@@ -1,0 +1,28 @@
+{
+  "root": "apps/exampleapp-e2e",
+  "sourceRoot": "apps/exampleapp-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/exampleapp-e2e/cypress.json",
+        "devServerTarget": "exampleapp:serve"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "exampleapp:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/exampleapp-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["exampleapp"]
+}

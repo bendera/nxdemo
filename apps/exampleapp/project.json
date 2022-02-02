@@ -1,0 +1,70 @@
+{
+  "projectType": "application",
+  "root": "apps/exampleapp",
+  "sourceRoot": "apps/exampleapp/src",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "outputPath": "dist/apps/exampleapp",
+        "compiler": "babel",
+        "index": "apps/exampleapp/src/index.html",
+        "baseHref": "/",
+        "main": "apps/exampleapp/src/main.ts",
+        "polyfills": "apps/exampleapp/src/polyfills.ts",
+        "tsConfig": "apps/exampleapp/tsconfig.app.json",
+        "assets": [
+          "apps/exampleapp/src/favicon.ico",
+          "apps/exampleapp/src/assets"
+        ],
+        "styles": ["apps/exampleapp/src/styles.css"],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/exampleapp/src/environments/environment.ts",
+              "with": "apps/exampleapp/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/web:dev-server",
+      "options": {
+        "buildTarget": "exampleapp:build"
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "exampleapp:build:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/exampleapp/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/exampleapp"],
+      "options": {
+        "jestConfig": "apps/exampleapp/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  }
+}
