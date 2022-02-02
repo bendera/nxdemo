@@ -15,8 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@nxdemo/store/ui-shared": ["libs/store/ui-shared/src/index.ts"],
-      "@nxdemo/ui-shared-publishable": [
+      "@bendera/store/ui-shared": ["libs/store/ui-shared/src/index.ts"],
+      "@bendera/ui-shared-publishable": [
         "libs/store/ui-shared-publishable/src/index.ts"
       ]
     }
