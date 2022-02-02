@@ -40,6 +40,12 @@
         "jestConfig": "libs/store/ui-shared-publishable/jest.config.js",
         "passWithNoTests": true
       }
+    },
+    "deploy": {
+      "executor": "ngx-deploy-npm:deploy",
+      "options": {
+        "access": "public"
+      }
     }
   }
 }
